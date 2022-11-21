@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Book Catalog Search</title>
+</head>
+
+<body>
+  <h1>Book Catalog Search</h1>
+
+  <form >
+  <p><strong>Choose Search Type:</strong><br />
+  <select name="searchtype" onchange="showCustomer(this.value,searchterm.value)">
+  <option value="Author">Author</option>
+  <option value="Title">Title</option>
+  <option value="ISBN">ISBN</option>
+  </select>
+  </p>
+  <p><strong>Enter Search Term:</strong><br />
+  <input name="searchterm" type="text" size="40"></p>
+
+  <p><input type="submit" name="submit" value="Search" ></p>
+ 
+  
+  </form>
+<div id="txtHint">Customer info will be listed here...</div>
+
+<script>
+function showCustomer(str,str2) {
+  if (str == "") {
+    document.getElementById("txtHint").innerHTML = "";
+    return;
+  }
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    document.getElementById("txtHint").innerHTML = this.responseText;
+  }
+  xhttp.open("GET", "results_pdo.php?xyz="+str+"&searchterm="+str2);
+  xhttp.send();
+}
+</script>
+
+
+
+</body>
+</html>
+
