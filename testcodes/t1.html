@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+   <p id="here">hello <span>there</span></p>
+<ul>
+<li>France</li>
+<li>Spain</li>
+<li>Thailand</li>
+</ul>
+<div id="main">
+  <a href ="somewhere.html">
+     <img src ="whatever.gif" class="thumb">
+  </a>
+</div>
+
+<script>
+const node = document.getElementById ("here");
+console.log(node.innerHTML ); 
+console.log(node.textContent ); 
+
+const items = document.getElementsByTagName ("li");
+for (let i =0; i<items.length; i++)
+     {console.log(items[i].textContent)}
+
+const link = document.querySelector ("#main a");
+console.log(link.href ); 
+
+const img = document.querySelector ("#main img");
+console.log(img.src ); 
+
+console.log(img.className ); 
+</script>
+
+</html>

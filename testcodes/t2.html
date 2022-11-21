@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+   <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<div id="main">
+ <p>click me</p>
+</div>
+
+<script>
+function handlerName(a)
+{
+alert(a.data.msg);
+}
+
+$(function(){
+$("p").bind("click", {msg: "You just clicked me!"}, handlerName);
+});
+
+</script>
+
+</html>
